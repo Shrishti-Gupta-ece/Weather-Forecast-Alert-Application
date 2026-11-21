@@ -18,7 +18,7 @@ def main():
     p.add_argument("--city", default=DEFAULT_CITY)
     p.add_argument("--mode", choices=["sim", "api"], default="sim")
     p.add_argument("--scenario", choices=["normal", "heat", "storm"], default="normal",
-                   help="sirf sim mode me: alerts test karne ke liye")
+                   help="simulation mode only: test alert scenarios")
     p.add_argument("--notify", action="store_true", help="Telegram alert bhejo (optional)")
     p.add_argument("--no-chart", action="store_true")
     a = p.parse_args()
@@ -44,7 +44,7 @@ def main():
         for al in res["alerts"]:
             print(f"{ICON[al['severity']]} {al['code']}: {al['message']}")
     else:
-        print("No alerts. Mausam theek hai.")
+        print("No alerts. Weather looks fine.")
 
     paths = save_outputs(res, chart=not a.no_chart)
     print("\n=== SAVED FILES ===")

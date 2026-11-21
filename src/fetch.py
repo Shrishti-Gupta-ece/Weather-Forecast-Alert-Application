@@ -15,10 +15,10 @@ def geocode(city: str) -> dict:
         r = requests.get(GEO_URL, params={"name": city, "count": 1}, timeout=15)
         r.raise_for_status()
     except requests.exceptions.RequestException as e:
-        raise WeatherAPIError(f"Geocoding fail hui (internet check karo): {e}")
+        raise WeatherAPIError(f"Geocoding failed (check your internet connection): {e}")
     results = r.json().get("results")
     if not results:
-        raise WeatherAPIError(f"City '{city}' nahi mili. Spelling check karo.")
+        raise WeatherAPIError(f"City '{city}' not found. Please check the spelling.")
     return results[0]
 
 

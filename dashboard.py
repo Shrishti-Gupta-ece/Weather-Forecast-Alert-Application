@@ -1,4 +1,4 @@
-"""Streamlit dashboard (DB se padhta hai).  streamlit run dashboard.py"""
+"""Streamlit dashboard (reads from the database).  streamlit run dashboard.py"""
 import pandas as pd
 import streamlit as st
 from src.db import init_db
@@ -28,13 +28,13 @@ with st.sidebar:
 
 locs = service.list_locations()
 if not locs:
-    st.info("Sidebar se pehli city add karo.")
+    st.info("Add your first city from the sidebar.")
     st.stop()
 
 sel = st.selectbox("Location", locs, format_func=lambda l: f"{l['name']} ({l['mode']})")
 cur = service.load_current(sel["id"])
 if cur is None:
-    st.warning("Data nahi hai. 'Refresh all data' dabao.")
+    st.warning("No data yet. Click 'Refresh all data' in the sidebar.")
     st.stop()
 
 c1, c2, c3, c4 = st.columns(4)

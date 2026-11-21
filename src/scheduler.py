@@ -1,5 +1,5 @@
 """Auto-refresh + alert dispatch.
-  python -m src.scheduler          # forever chalta hai
+  python -m src.scheduler          # runs forever
   python -m src.scheduler --once   # ek baar refresh + dispatch"""
 import sys
 from apscheduler.schedulers.blocking import BlockingScheduler

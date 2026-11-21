@@ -59,7 +59,7 @@ def refresh_location(loc_id: int) -> int:
     loc = con.execute("SELECT * FROM locations WHERE id=?", (loc_id,)).fetchone()
     if loc is None:
         con.close()
-        raise ValueError(f"location_id {loc_id} exist nahi karta")
+        raise ValueError(f"location_id {loc_id} does not exist")
     if loc["mode"] == "api":
         data = with_retry(lambda: fetch_forecast(loc["lat"], loc["lon"]))
         provider = "open-meteo"

@@ -51,7 +51,7 @@ def text_report(result: dict) -> str:
     if result["alerts"]:
         lines += [f"  [{a['severity'].upper()}] {a['code']}: {a['message']}" for a in result["alerts"]]
     else:
-        lines.append("  No alerts. Mausam theek hai.")
+        lines.append("  No alerts. Weather looks fine.")
     return "\n".join(lines) + "\n"
 
 

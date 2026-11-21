@@ -4,7 +4,7 @@ import sqlite3
 
 
 def db_path() -> str:
-    return os.getenv("WEATHER_DB", "db/weather.db")   # env se badalna easy (tests/docker ke liye)
+    return os.getenv("WEATHER_DB", "db/weather.db")   # overridable via env (tests/docker)
 
 
 SCHEMA = """

@@ -84,7 +84,7 @@ def get_alerts(loc_id: int) -> list[dict]:
 
 
 def dispatch(loc_id: int, debounce_hours: int = 12) -> list[dict]:
-    """Naye alerts bhejo. Same (location, code) 12h ke andar dobara nahi jaata."""
+    """Send new alerts only. The same (location, code) is not re-sent within the debounce window (12h)."""
     con = get_conn()
     name = con.execute("SELECT name FROM locations WHERE id=?", (loc_id,)).fetchone()["name"]
     sent = []

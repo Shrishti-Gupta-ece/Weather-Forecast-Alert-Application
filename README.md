@@ -63,7 +63,7 @@ pytest -q
 # 6) Docker
 docker compose up --build
 ```
-Quick one-shot report mode (CSV + chart): `python main.py --mode sim --city Indore --scenario storm`
+One-shot report mode (CSV + text report + chart): `python main.py --mode sim --city Indore --scenario storm`
 
 ## API Endpoints
 `GET /health` · `GET/POST /locations` · `POST /refresh` · `GET /forecast/current|hourly|daily?location_id=` · `GET /alerts?location_id=` · `GET /alerts/history`

@@ -20,15 +20,15 @@ def evaluate(current: dict, hourly: pd.DataFrame, daily: pd.DataFrame) -> list[d
         alerts.append({"code": code, "severity": severity, "message": message})
 
     if rain_prob >= T["rain_prob_pct"]:
-        add("RAIN_SOON", "warn", f"Agle 12 ghante me baarish ki sambhavna {rain_prob:.0f}% - chhata saath rakho.")
+        add("RAIN_SOON", "warn", f"Rain likely in the next 12 hours ({rain_prob:.0f}% chance) - carry an umbrella.")
     if tmax >= T["heat_tmax_c"]:
-        add("HEAT_WAVE", "critical", f"Aaj/kal max temperature {tmax:.1f}C - dhoop se bacho, paani piyo.")
+        add("HEAT_WAVE", "critical", f"Max temperature of {tmax:.1f}°C expected today/tomorrow - avoid midday sun and stay hydrated.")
     if gust >= T["wind_gust_ms"]:
-        add("WIND_HIGH", "warn", f"Agle 24 ghante me tez hawa (gust {gust:.1f} m/s = {gust*3.6:.0f} km/h).")
+        add("WIND_HIGH", "warn", f"Strong wind gusts expected in the next 24 hours ({gust:.1f} m/s = {gust*3.6:.0f} km/h).")
     if hum is not None and hum >= T["humidity_pct"]:
-        add("HUMIDITY_HIGH", "info", f"Humidity {hum}% - mausam umas bhara rahega.")
+        add("HUMIDITY_HIGH", "info", f"Humidity is {hum}% - expect muggy, uncomfortable conditions.")
     if uv >= T["uv_index"]:
-        add("UV_HIGH", "warn", f"UV index {uv:.1f} - sunscreen lagao.")
+        add("UV_HIGH", "warn", f"UV index {uv:.1f} - wear sunscreen and limit sun exposure.")
     if rain_prob >= 70 and gust >= T["wind_gust_ms"]:
-        add("STORM_RISK", "critical", "Baarish + tez hawa saath me - toofan jaisa mausam, bahar jaane se bacho.")
+        add("STORM_RISK", "critical", "Heavy rain combined with strong wind - storm-like conditions, avoid going outdoors.")
     return alerts

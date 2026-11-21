@@ -1,5 +1,5 @@
-"""Virtual simulation: API ke bina Open-Meteo jaisa fake-but-realistic data banata hai.
-Scenarios: normal | heat | storm  (alerts test karne ke liye)."""
+"""Virtual simulation: generates realistic fake data in the same shape as Open-Meteo, no API needed.
+Scenarios: normal | heat | storm (used to test alerts)."""
 import math
 import random
 from datetime import datetime, timedelta
