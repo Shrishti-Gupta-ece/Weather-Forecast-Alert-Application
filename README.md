@@ -68,26 +68,6 @@ One-shot report mode (CSV + text report + chart): `python main.py --mode sim --c
 ## API Endpoints
 `GET /health` · `GET/POST /locations` · `POST /refresh` · `GET /forecast/current|hourly|daily?location_id=` · `GET /alerts?location_id=` · `GET /alerts/history`
 
-## Screenshots
-## Screenshots
-
-### Dashboard: real-time data (Open-Meteo)
-![Dashboard real](images/dashboard_real.png)
-
-### Dashboard: simulated storm scenario with alerts
-![Dashboard alerts](images/dashboard_alerts.png)
-
-### REST API (FastAPI docs)
-![API docs](images/api_docs.png)
-![Alerts endpoint](images/api_alerts_response.png)
-
-### Tests
-![pytest](images/pytest_pass.png)
-
-
-## Learning Outcomes
-API integration, data modeling (SQL), rule engines, REST design, scheduling/automation, idempotency & de-duplication, testing (golden tests), Docker, CI/CD, secret management.
-
 ## Folder Structure
 
 ```
@@ -143,5 +123,29 @@ Weather-Forecast-Alert-Application/
 | `images/` | Screenshots for documentation |
 | `docs/` | Extra documentation and interview prep |
 | `.env.example` | Safe template; the real `.env` is never uploaded |
+
+
+
+
+## Screenshots
+
+
+### Dashboard: real-time data (Open-Meteo)
+![Dashboard real](images/dashboard_real.png)
+
+### Dashboard: simulated storm scenario with alerts
+![Dashboard alerts](images/dashboard_alerts.png)
+
+### REST API (FastAPI docs)
+![API docs](images/api_docs.png)
+![Alerts endpoint](images/api_alerts_response.png)
+
+### Tests
+![pytest](images/pytest_pass.png)
+
+
+## Learning Outcomes
+API integration, data modeling (SQL), rule engines, REST design, scheduling/automation, idempotency & de-duplication, testing (golden tests), Docker, CI/CD, secret management.
+
 
 
