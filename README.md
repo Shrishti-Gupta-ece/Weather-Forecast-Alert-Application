@@ -69,7 +69,24 @@ One-shot report mode (CSV + text report + chart): `python main.py --mode sim --c
 `GET /health` · `GET/POST /locations` · `POST /refresh` · `GET /forecast/current|hourly|daily?location_id=` · `GET /alerts?location_id=` · `GET /alerts/history`
 
 ## Screenshots
-Add to `images/`: terminal output, `/docs` page, dashboard, chart, alert history.
+## Screenshots
+
+### Dashboard: real-time data (Open-Meteo)
+![Dashboard real](images/dashboard_real.png)
+
+### Dashboard: simulated storm scenario with alerts
+![Dashboard alerts](images/dashboard_alerts.png)
+
+### REST API (FastAPI docs)
+![API docs](images/api_docs.png)
+![Alerts endpoint](images/api_alerts_response.png)
+
+### Tests
+![pytest](images/pytest_pass.png)
+
+(images/01_folder_structure.png)
 
 ## Learning Outcomes
 API integration, data modeling (SQL), rule engines, REST design, scheduling/automation, idempotency & de-duplication, testing (golden tests), Docker, CI/CD, secret management.
+
+
